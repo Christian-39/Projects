@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            margin: 0px;
+            padding: 10px;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+        }
+        
+        table {
+            border: 1px solid grey;
+        }
+        
+        th {
+            padding: 10px;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="10">EMPLOYEE INFORMATION</th>
+        </tr>
+        <tr>
+            <th>FIRST NAME</th>
+            <th>SECOND NAME</th>
+            <th>ID</th>
+            <th>CONTACT NUMBER</th>
+            <th>EMAIL</th>
+            <th>AGE</th>
+            <th>ADDRESS</th>
+            <th>SALARY</th>
+            <th>IMAGE URL</th>
+            <th>D.O.B</th>
+        </tr>
+        <tr>
+            <td id="fname1"></td>
+            <td id="sname1"></td>
+            <td id="id1"></td>
+            <td id="cnumber1"></td>
+            <td id="email1"></td>
+            <td id="age1"></td>
+            <td id="address1"></td>
+            <td id="salary1"></td>
+            <td id="imageUrl1"></td>
+            <td id="dob1"></td>
+        </tr>
+        <tr>
+            <td id="fname2"></td>
+            <td id="sname2"></td>
+            <td id="id2"></td>
+            <td id="cnumber2"></td>
+            <td id="email2"></td>
+            <td id="age2"></td>
+            <td id="address2"></td>
+            <td id="salary2"></td>
+            <td id="imageUrl2"></td>
+            <td id="dob2"></td>
+        </tr>
+        <tr>
+            <td id="fname3"></td>
+            <td id="sname3"></td>
+            <td id="id3"></td>
+            <td id="cnumber3"></td>
+            <td id="email3"></td>
+            <td id="age3"></td>
+            <td id="address3"></td>
+            <td id="salary3"></td>
+            <td id="imageUrl3"></td>
+            <td id="dob3"></td>
+        </tr>
+        <tr>
+            <td id="fname4"></td>
+            <td id="sname4"></td>
+            <td id="id4"></td>
+            <td id="cnumber4"></td>
+            <td id="email4"></td>
+            <td id="age4"></td>
+            <td id="address4"></td>
+            <td id="salary4"></td>
+            <td id="imageUrl4"></td>
+            <td id="dob4"></td>
+        </tr>
+        <tr>
+            <td id="fname5"></td>
+            <td id="sname5"></td>
+            <td id="id5"></td>
+            <td id="cnumber5"></td>
+            <td id="email5"></td>
+            <td id="age5"></td>
+            <td id="address5"></td>
+            <td id="salary5"></td>
+            <td id="imageUrl5"></td>
+            <td id="dob5"></td>
+        </tr>
+        <tr>
+            <td id="fname6"></td>
+            <td id="sname6"></td>
+            <td id="id6"></td>
+            <td id="cnumber6"></td>
+            <td id="email6"></td>
+            <td id="age6"></td>
+            <td id="address6"></td>
+            <td id="salary6"></td>
+            <td id="imageUrl6"></td>
+            <td id="dob6"></td>
+        </tr>
+        <tr>
+            <td id="fname7"></td>
+            <td id="sname7"></td>
+            <td id="id7"></td>
+            <td id="cnumber7"></td>
+            <td id="email7"></td>
+            <td id="age7"></td>
+            <td id="address7"></td>
+            <td id="salary7"></td>
+            <td id="imageUrl7"></td>
+            <td id="dob7"></td>
+        </tr>
+        <tr>
+            <td id="fname8"></td>
+            <td id="sname8"></td>
+            <td id="id8"></td>
+            <td id="cnumber8"></td>
+            <td id="email8"></td>
+            <td id="age8"></td>
+            <td id="address8"></td>
+            <td id="salary8"></td>
+            <td id="imageUrl8"></td>
+            <td id="dob8"></td>
+        </tr>
+        <tr>
+            <td id="fname9"></td>
+            <td id="sname9"></td>
+            <td id="id9"></td>
+            <td id="cnumber9"></td>
+            <td id="email9"></td>
+            <td id="age9"></td>
+            <td id="address9"></td>
+            <td id="salary9"></td>
+            <td id="imageUrl9"></td>
+            <td id="dob9"></td>
+        </tr>
+        <tr>
+            <td id="fname10"></td>
+            <td id="sname10"></td>
+            <td id="id10"></td>
+            <td id="cnumber10"></td>
+            <td id="email10"></td>
+            <td id="age10"></td>
+            <td id="address10"></td>
+            <td id="salary10"></td>
+            <td id="imageUrl10"></td>
+            <td id="dob10"></td>
+        </tr>
+    </table>
+    <script>
+        const endpoint = 'https://hub.dummyapis.com/employee'
+        window.fetch(endpoint)
+            .then((Response) => Response.json())
+            .then((employee) => {
+                console.log(employee)
+
+                const fname1 = document.getElementById('fname1')
+                const sname1 = document.getElementById('sname1')
+                const id1 = document.getElementById('id1')
+                const cnumber1 = document.getElementById('cnumber1')
+                const email1 = document.getElementById('email1')
+                const age1 = document.getElementById('age1')
+                const address1 = document.getElementById('address1')
+                const salary1 = document.getElementById('salary1')
+                const imageUrl1 = document.getElementById('imageUrl1')
+                const dob1 = document.getElementById('dob1')
+
+                fname1.innerHTML = employee[0].firstName
+                sname1.innerHTML = employee[0].lastName
+                id1.innerHTML = employee[0].id
+                cnumber1.innerHTML = employee[0].contactNumber
+                email1.innerHTML = employee[0].email
+                age1.innerHTML = employee[0].age
+                address1.innerHTML = employee[0].address
+                salary1.innerHTML = employee[0].salary
+                imageUrl1.innerHTML = employee[0].imageUrl
+                dob1.innerHTML = employee[0].dob
+
+                const fname2 = document.getElementById('fname2')
+                const sname2 = document.getElementById('sname2')
+                const id2 = document.getElementById('id2')
+                const cnumber2 = document.getElementById('cnumber2')
+                const email2 = document.getElementById('email2')
+                const age2 = document.getElementById('age2')
+                const address2 = document.getElementById('address2')
+                const salary2 = document.getElementById('salary2')
+                const imageUrl2 = document.getElementById('imageUrl2')
+                const dob2 = document.getElementById('dob2')
+
+                fname2.innerHTML = employee[1].firstName
+                sname2.innerHTML = employee[1].lastName
+                id2.innerHTML = employee[1].id
+                cnumber2.innerHTML = employee[1].contactNumber
+                email2.innerHTML = employee[1].email
+                age2.innerHTML = employee[1].age
+                address2.innerHTML = employee[1].address
+                salary2.innerHTML = employee[1].salary
+                imageUrl2.innerHTML = employee[1].imageUrl
+                dob2.innerHTML = employee[1].dob
+
+                const fname3 = document.getElementById('fname3')
+                const sname3 = document.getElementById('sname3')
+                const id3 = document.getElementById('id3')
+                const cnumber3 = document.getElementById('cnumber3')
+                const email3 = document.getElementById('email3')
+                const age3 = document.getElementById('age3')
+                const address3 = document.getElementById('address3')
+                const salary3 = document.getElementById('salary3')
+                const imageUrl3 = document.getElementById('imageUrl3')
+                const dob3 = document.getElementById('dob3')
+
+                fname3.innerHTML = employee[2].firstName
+                sname3.innerHTML = employee[2].lastName
+                id3.innerHTML = employee[2].id
+                cnumber3.innerHTML = employee[2].contactNumber
+                email3.innerHTML = employee[2].email
+                age3.innerHTML = employee[2].age
+                address3.innerHTML = employee[2].address
+                salary3.innerHTML = employee[2].salary
+                imageUrl3.innerHTML = employee[2].imageUrl
+                dob3.innerHTML = employee[2].dob
+
+                const fname4 = document.getElementById('fname4')
+                const sname4 = document.getElementById('sname4')
+                const id4 = document.getElementById('id4')
+                const cnumber4 = document.getElementById('cnumber4')
+                const email4 = document.getElementById('email4')
+                const age4 = document.getElementById('age4')
+                const address4 = document.getElementById('address4')
+                const salary4 = document.getElementById('salary4')
+                const imageUrl4 = document.getElementById('imageUrl4')
+                const dob4 = document.getElementById('dob4')
+
+                fname4.innerHTML = employee[3].firstName
+                sname4.innerHTML = employee[3].lastName
+                id4.innerHTML = employee[3].id
+                cnumber4.innerHTML = employee[3].contactNumber
+                email4.innerHTML = employee[3].email
+                age4.innerHTML = employee[3].age
+                address4.innerHTML = employee[3].address
+                salary4.innerHTML = employee[3].salary
+                imageUrl4.innerHTML = employee[3].imageUrl
+                dob4.innerHTML = employee[3].dob
+
+                const fname5 = document.getElementById('fname5')
+                const sname5 = document.getElementById('sname5')
+                const id5 = document.getElementById('id5')
+                const cnumber5 = document.getElementById('cnumber5')
+                const email5 = document.getElementById('email5')
+                const age5 = document.getElementById('age5')
+                const address5 = document.getElementById('address5')
+                const salary5 = document.getElementById('salary5')
+                const imageUrl5 = document.getElementById('imageUrl5')
+                const dob5 = document.getElementById('dob5')
+
+                fname5.innerHTML = employee[4].firstName
+                sname5.innerHTML = employee[4].lastName
+                id5.innerHTML = employee[4].id
+                cnumber5.innerHTML = employee[4].contactNumber
+                email5.innerHTML = employee[4].email
+                age5.innerHTML = employee[4].age
+                address5.innerHTML = employee[4].address
+                salary5.innerHTML = employee[4].salary
+                imageUrl5.innerHTML = employee[4].imageUrl
+                dob5.innerHTML = employee[4].dob
+
+                const fname6 = document.getElementById('fname6')
+                const sname6 = document.getElementById('sname6')
+                const id6 = document.getElementById('id6')
+                const cnumber6 = document.getElementById('cnumber6')
+                const email6 = document.getElementById('email6')
+                const age6 = document.getElementById('age6')
+                const address6 = document.getElementById('address6')
+                const salary6 = document.getElementById('salary6')
+                const imageUrl6 = document.getElementById('imageUrl6')
+                const dob6 = document.getElementById('dob6')
+
+                fname6.innerHTML = employee[5].firstName
+                sname6.innerHTML = employee[5].lastName
+                id6.innerHTML = employee[5].id
+                cnumber6.innerHTML = employee[5].contactNumber
+                email6.innerHTML = employee[5].email
+                age6.innerHTML = employee[5].age
+                address6.innerHTML = employee[5].address
+                salary6.innerHTML = employee[5].salary
+                imageUrl6.innerHTML = employee[5].imageUrl
+                dob6.innerHTML = employee[5].dob
+
+                const fname7 = document.getElementById('fname7')
+                const sname7 = document.getElementById('sname7')
+                const id7 = document.getElementById('id7')
+                const cnumber7 = document.getElementById('cnumber7')
+                const email7 = document.getElementById('email7')
+                const age7 = document.getElementById('age7')
+                const address7 = document.getElementById('address7')
+                const salary7 = document.getElementById('salary7')
+                const imageUrl7 = document.getElementById('imageUrl7')
+                const dob7 = document.getElementById('dob7')
+
+                fname7.innerHTML = employee[6].firstName
+                sname7.innerHTML = employee[6].lastName
+                id7.innerHTML = employee[6].id
+                cnumber7.innerHTML = employee[6].contactNumber
+                email7.innerHTML = employee[6].email
+                age7.innerHTML = employee[6].age
+                address7.innerHTML = employee[6].address
+                salary7.innerHTML = employee[6].salary
+                imageUrl7.innerHTML = employee[6].imageUrl
+                dob7.innerHTML = employee[6].dob
+
+                const fname8 = document.getElementById('fname8')
+                const sname8 = document.getElementById('sname8')
+                const id8 = document.getElementById('id8')
+                const cnumber8 = document.getElementById('cnumber8')
+                const email8 = document.getElementById('email8')
+                const age8 = document.getElementById('age8')
+                const address8 = document.getElementById('address8')
+                const salary8 = document.getElementById('salary8')
+                const imageUrl8 = document.getElementById('imageUrl8')
+                const dob8 = document.getElementById('dob8')
+
+                fname8.innerHTML = employee[7].firstName
+                sname8.innerHTML = employee[7].lastName
+                id8.innerHTML = employee[7].id
+                cnumber8.innerHTML = employee[7].contactNumber
+                email8.innerHTML = employee[7].email
+                age8.innerHTML = employee[7].age
+                address8.innerHTML = employee[7].address
+                salary8.innerHTML = employee[7].salary
+                imageUrl8.innerHTML = employee[7].imageUrl
+                dob8.innerHTML = employee[7].dob
+
+                const fname9 = document.getElementById('fname9')
+                const sname9 = document.getElementById('sname9')
+                const id9 = document.getElementById('id9')
+                const cnumber9 = document.getElementById('cnumber9')
+                const email9 = document.getElementById('email9')
+                const age9 = document.getElementById('age9')
+                const address9 = document.getElementById('address9')
+                const salary9 = document.getElementById('salary9')
+                const imageUrl9 = document.getElementById('imageUrl9')
+                const dob9 = document.getElementById('dob9')
+
+                fname9.innerHTML = employee[8].firstName
+                sname9.innerHTML = employee[8].lastName
+                id9.innerHTML = employee[8].id
+                cnumber9.innerHTML = employee[8].contactNumber
+                email9.innerHTML = employee[8].email
+                age9.innerHTML = employee[8].age
+                address9.innerHTML = employee[8].address
+                salary9.innerHTML = employee[8].salary
+                imageUrl9.innerHTML = employee[8].imageUrl
+                dob9.innerHTML = employee[8].dob
+
+                const fname10 = document.getElementById('fname10')
+                const sname10 = document.getElementById('sname10')
+                const id10 = document.getElementById('id10')
+                const cnumber10 = document.getElementById('cnumber10')
+                const email10 = document.getElementById('email10')
+                const age10 = document.getElementById('age10')
+                const address10 = document.getElementById('address10')
+                const salary10 = document.getElementById('salary10')
+                const imageUrl10 = document.getElementById('imageUrl10')
+                const dob10 = document.getElementById('dob10')
+
+                fname10.innerHTML = employee[9].firstName
+                sname10.innerHTML = employee[9].lastName
+                id10.innerHTML = employee[9].id
+                cnumber10.innerHTML = employee[9].contactNumber
+                email10.innerHTML = employee[9].email
+                age10.innerHTML = employee[9].age
+                address10.innerHTML = employee[9].address
+                salary10.innerHTML = employee[9].salary
+                imageUrl10.innerHTML = employee[9].imageUrl
+                dob10.innerHTML = employee[9].dob
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-box-rps img:hover {
+            box-shadow: 0px 10px 50px rgb(16, 16, 19);
+        }
+        
+        container {
+            border: 1px solid black;
+            width: 70%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .flex-box-rps {
+            display: flex;
+            border: 1px solid black;
+            justify-content: space-around;
+            padding: 10px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock, Paper, Scissor</h1>
+        <div class="flex-box-rps" id="flex-box-rps-div">
+            <img id="rock" src="/bootstrap/windows_obj/rock.jpg" height="150" width="150" alt="" onclick="rpsGame(this)">
+            <img id="paper" src="/bootstrap/windows_obj/paper.png" height="150" width="150" alt="" onclick="rpsGame(this)">
+            <img id="scissors" src="/bootstrap/windows_obj/scissors.jpg" height="150" width="150" alt="" onclick="rpsGame(this)">
+        </div>
+    </div>
+    <script>
+        function rpsGame(yourchoice) {
+            var humanchoice, computerchoice;
+            computerchoice = numberToChoice(randomToInt());
+        }
+
+        function randomToInt() {
+            return Math.floor(Math.random() * 3);
+        }
+
+        function numberToChoice(number) {
+            return ['rock', 'paper', 'scissors'][number]
+        }
+    </script>
+</body>
+
+</html>

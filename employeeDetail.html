@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="search" id="citysearch"><button onclick="cities()">Search</button>
+    <div class="weather">
+        <span id="icon">icon</span><span id="temperature">temp</span><span id="icon"></span>
+        <div class="con">
+            <span id="condition">condition</span>
+        </div>
+    </div>
+
+    <script>
+        function cities() {
+            let search = document.getElementById('citysearch').value
+            const endpoint = `https://weatherapi-com.p.rapidapi.com/current.json?q=${search}`
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '03a0144ef6msh19f6f52164935dbp192860jsn893fc7bf463e',
+                    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                }
+            };
+
+            fetch(endpoint, options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    let condition = document.getElementById('condition')
+                    condition.innerHTML = data['current']['condition']['text']
+                    let icon = document.getElementById('icon')
+                    icon.innerHTML = data['current']['condition']['icon']
+                    let temperature = document.getElementById('temperature')
+                    temperature.innerHTML = data['current']['temp_c']
+                    let icon2 = document.getElementById('icon2')
+                    let display = data['current']['condition']['icon']
+                    icon.innerHTML = open(display, '_self')
+
+                })
+                .catch(err => console.error(err));
+
+
+        }
+    </script>
+</body>
+
+</html>
